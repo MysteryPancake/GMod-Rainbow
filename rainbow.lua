@@ -81,6 +81,40 @@ local function DrawRainbowRectOutline( x, y, w, h )
 end
 
 --[[---------------------------------------------------------
+	Name: DrawRainbowGradientRectOutline
+	Desc: This draws a rainbow outline of a rectangle (using individual lines).
+	It looks more like a gradient than DrawRainbowRectOutline, like a DrawRainbowGradientRect with a hole in its middle.
+	The bVertical (bool) argument defines whether this rainbow is vertical or not.
+-----------------------------------------------------------]]
+local function DrawRainbowGradientRectOutline( bVertical, x, y, w, h )
+	
+	if bVertical then
+		surface.SetDrawColor( HSVToColor( y * multiplier % 360, 1, 1 ) )
+		surface.DrawLine( x, y, x+w, y )	
+		
+		for i = y, y+h-1 do -- draw the y axis lines
+			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+			surface.DrawLine( x, i, x, i+1 )
+			surface.DrawLine( x+w-1, i, x+w, i+1 )
+		end
+		
+		surface.DrawLine( x, y+h, x+w, y+h )
+	else
+		surface.SetDrawColor( HSVToColor( x * multiplier % 360, 1, 1 ) )
+		surface.DrawLine( x, y, x, y+h )
+		
+		for i = x, x+w-1 do -- draw the x axis lines
+			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+			surface.DrawLine( i, y, i+1, y )
+			surface.DrawLine( i, y+h-1, i+1, y+h )
+		end
+		
+		surface.DrawLine( x+w, y, x+w, y+h )
+	end
+	
+end
+
+--[[---------------------------------------------------------
 	Name: DrawRainbowGradientRect
 	Desc: This draws a filled rainbow rectangle using smaller rectangles. It looks like a gradient.
 	The bVertical (bool) argument defines whether this rainbow is vertical or not.
