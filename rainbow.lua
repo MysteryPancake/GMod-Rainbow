@@ -40,12 +40,12 @@ end
 -----------------------------------------------------------]]
 local function DrawRainbowRect( bVertical, x, y, w, h )
 	if bVertical then
-		for i = y, y+h do
+		for i = y, y+h-1 do
 			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
 			surface.DrawRect( x, i, w, 1 )
 		end
 	else
-		for i = x, x+w do
+		for i = x, x+w-1 do
 			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
 			surface.DrawRect( i, y, 1, h )
 		end
