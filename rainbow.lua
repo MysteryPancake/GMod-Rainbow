@@ -1,8 +1,9 @@
 local multiplier = 20 -- This controls how much of the rainbow is shown with the following functions.
 
--- Name: ConsolePrintRainbow
--- Desc: This prints rainbow text in the console.
-
+--[[---------------------------------------------------------
+	Name: ConsolePrintRainbow
+	Desc: This prints rainbow text in the console.
+-----------------------------------------------------------]]
 local function ConsolePrintRainbow( text )
 	local tab = {}
 	for i = 1, #text do
@@ -15,9 +16,10 @@ local function ConsolePrintRainbow( text )
 	MsgC( unpack( tab ) )
 end
 
--- Name: DrawRainbowOutlinedRect
--- Desc: This draws a rainbow outline of a rectangle (using individual lines).
-
+--[[---------------------------------------------------------
+	Name: DrawRainbowOutlinedRect
+	Desc: This draws a rainbow outline of a rectangle (using individual lines).
+-----------------------------------------------------------]]
 local function DrawRainbowOutlinedRect( x, y, w, h )
 	for i = x, x+w-1 do -- draw the x axis lines
 		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
@@ -31,9 +33,11 @@ local function DrawRainbowOutlinedRect( x, y, w, h )
 	end
 end
 
--- Name: DrawRainbowRect
--- Desc: This draws a filled rainbow rectangle using smaller rectangles. The bVertical (bool) argument defines whether this rainbow is vertical or not.
-
+--[[---------------------------------------------------------
+	Name: DrawRainbowRect
+	Desc: This draws a filled rainbow rectangle using smaller rectangles.
+	The bVertical (bool) argument defines whether this rainbow is vertical or not.
+-----------------------------------------------------------]]
 local function DrawRainbowRect( bVertical, x, y, w, h )
 	if bVertical then
 		for i = y, y+h do
