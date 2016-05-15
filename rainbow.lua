@@ -61,10 +61,10 @@ local function DrawRainbowText( text, font, x, y )
 end
 
 --[[---------------------------------------------------------
-	Name: DrawRainbowOutlinedRect
+	Name: DrawRainbowRectOutline
 	Desc: This draws a rainbow outline of a rectangle (using individual lines). It doesn't look like a gradient.
 -----------------------------------------------------------]]
-local function DrawRainbowOutlinedRect( x, y, w, h )
+local function DrawRainbowRectOutline( x, y, w, h )
 	
 	for i = x, x+w-1 do -- draw the x axis lines
 		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
