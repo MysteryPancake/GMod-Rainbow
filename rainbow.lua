@@ -42,6 +42,25 @@ local function ChatPrintRainbow( text )
 end
 
 --[[---------------------------------------------------------
+	Name: DrawRainbowText
+	Desc: This draws rainbow text (using individual letters).
+-----------------------------------------------------------]]
+local function DrawRainbowText( text, font, x, y )
+
+	surface.SetFont( font )
+
+	for i = 1, #text do
+		local col = HSVToColor( i * multiplier % 360, 1, 1 )
+		surface.SetTextColor( col )
+		local w, h = surface.GetTextSize( string.sub( text, 1, i-1 ) )
+		surface.SetTextPos( x + w, y )
+		local letter = string.sub( text, i, i )
+		surface.DrawText( letter )
+	end
+
+end
+
+--[[---------------------------------------------------------
 	Name: DrawRainbowOutlinedRect
 	Desc: This draws a rainbow outline of a rectangle (using individual lines).
 -----------------------------------------------------------]]
