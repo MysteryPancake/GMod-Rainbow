@@ -115,11 +115,11 @@ local function DrawRainbowGradientRectOutline( bVertical, x, y, w, h )
 end
 
 --[[---------------------------------------------------------
-	Name: DrawRainbowGradientRect
+	Name: DrawRainbowRect
 	Desc: This draws a filled rainbow rectangle using smaller rectangles. It looks like a gradient.
 	The bVertical (bool) argument defines whether this rainbow is vertical or not.
 -----------------------------------------------------------]]
-local function DrawRainbowGradientRect( bVertical, x, y, w, h )
+local function DrawRainbowRect( bVertical, x, y, w, h )
 	
 	if bVertical then
 		for i = y, y+h-1 do
@@ -133,4 +133,24 @@ local function DrawRainbowGradientRect( bVertical, x, y, w, h )
 		end
 	end
 
+end
+
+--[[---------------------------------------------------------
+	Name: DrawTiltedRainbowRect
+	Desc: This draws a tilted filled rainbow rectangle using smaller rectangles. It looks like a gradient.
+	The bTiltedLeft (bool) argument defines whether this rainbow is tilted to the left or the right.
+-----------------------------------------------------------]]
+local function DrawTiltedRainbowRect( bTiltedLeft, x, y, w, h )
+
+	for i = x, x+w-1 do
+		for j = y, y+h-1 do
+			if bTiltedLeft then
+				surface.SetDrawColor( HSVToColor( i+j % 360, 1, 1 ) )
+			else
+				surface.SetDrawColor( HSVToColor( i-j % 360, 1, 1 ) )
+			end
+			surface.DrawRect( i, j, 1, 1 )
+		end
+	end
+	
 end
