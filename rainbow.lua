@@ -23,6 +23,25 @@ local function ConsolePrintRainbow( text )
 end
 
 --[[---------------------------------------------------------
+	Name: ChatPrintRainbow
+	Desc: This prints rainbow text in the chat.
+-----------------------------------------------------------]]
+local function ChatPrintRainbow( text )
+	
+	local tab = {}
+	
+	for i = 1, #text do
+		local col = HSVToColor( i * multiplier % 360, 1, 1 )
+		table.insert( tab, col )
+		local letter = string.sub( text, i, i )
+		table.insert( tab, letter )
+	end
+
+	chat.AddText( unpack( tab ) )
+	
+end
+
+--[[---------------------------------------------------------
 	Name: DrawRainbowOutlinedRect
 	Desc: This draws a rainbow outline of a rectangle (using individual lines).
 -----------------------------------------------------------]]
