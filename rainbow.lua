@@ -62,7 +62,7 @@ end
 
 --[[---------------------------------------------------------
 	Name: DrawRainbowOutlinedRect
-	Desc: This draws a rainbow outline of a rectangle (using individual lines).
+	Desc: This draws a rainbow outline of a rectangle (using individual lines). It doesn't look like a gradient.
 -----------------------------------------------------------]]
 local function DrawRainbowOutlinedRect( x, y, w, h )
 	
@@ -81,11 +81,11 @@ local function DrawRainbowOutlinedRect( x, y, w, h )
 end
 
 --[[---------------------------------------------------------
-	Name: DrawRainbowRect
-	Desc: This draws a filled rainbow rectangle using smaller rectangles.
+	Name: DrawRainbowGradientRect
+	Desc: This draws a filled rainbow rectangle using smaller rectangles. It looks like a gradient.
 	The bVertical (bool) argument defines whether this rainbow is vertical or not.
 -----------------------------------------------------------]]
-local function DrawRainbowRect( bVertical, x, y, w, h )
+local function DrawRainbowGradientRect( bVertical, x, y, w, h )
 	
 	if bVertical then
 		for i = y, y+h-1 do
