@@ -134,3 +134,18 @@ local function DrawRainbowRect( bVertical, x, y, w, h )
 	end
 
 end
+
+--[[---------------------------------------------------------
+	Name: DrawRainbowRect2
+	Desc: This draws a filled rainbow rectangle using smaller rectangles.
+	It looks like a gradient, but this time the gradient goes inward from the corners and merges in the middle.
+	This function is not affected by the multiplier variable.
+-----------------------------------------------------------]]
+local function DrawRainbowRect2( x, y, w, h )
+	for i = x, x+w-1 do
+		for j = y, y+h-1 do
+			surface.SetDrawColor( (i/w)*255, (j/h)*255, 255-((i/w)*255), 255 )
+			surface.DrawRect( i, j, 1, 1 )
+		end
+	end
+end
