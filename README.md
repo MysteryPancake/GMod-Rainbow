@@ -16,10 +16,6 @@ You're free to use these functions in whatever you want since they're all very s
 ![DrawRainbowText image](http://i.imgur.com/fcVnwnh.png)
 #### DrawRainbowRectOutline
 ![DrawRainbowRectOutline image](http://i.imgur.com/wdpXkNw.png)
-#### DrawRainbowGradientRectOutline
-![DrawRainbowGradientRectOutline image](http://i.imgur.com/wXNdqHV.png)
-
-The rectangle on the left has bVertical set as true, the one on the right as false.
 #### DrawRainbowRect
 ![DrawRainbowRect image](http://i.imgur.com/UrNhdOR.png)
 
