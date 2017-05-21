@@ -13,7 +13,7 @@ local function ConsolePrintRainbow( mult, text )
 		table.insert( tab, letter )
 	end
 	
-	table.insert( tab, '\n' )
+	table.insert( tab, "\n" )
 	MsgC( unpack( tab ) )
 	
 end
