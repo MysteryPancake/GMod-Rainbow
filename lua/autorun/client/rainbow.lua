@@ -62,13 +62,13 @@ end
 -----------------------------------------------------------]]
 local function DrawRainbowRectOutline( mult, x, y, w, h )
 	
-	for i = x, x + w - 1 do -- X axis lines
+	for i = x, x + w - 1 do
 		surface.SetDrawColor( HSVToColor( i * mult % 360, 1, 1 ) )
 		surface.DrawLine( i, y, i + 1, y )
 		surface.DrawLine( i, y + h - 1, i + 1, y + h )
 	end
 	
-	for i = y, y + h - 1 do -- Y axis lines
+	for i = y, y + h - 1 do
 		surface.SetDrawColor( HSVToColor( i * mult % 360, 1, 1 ) )
 		surface.DrawLine( x, i, x, i + 1 )
 		surface.DrawLine( x + w - 1, i, x + w, i + 1 )
@@ -81,7 +81,6 @@ end
     Draws a rainbow rectangle.
 -----------------------------------------------------------]]
 local function DrawRainbowRect( mult, vertical, x, y, w, h )
-	
 	if vertical then
 		for i = y, y + h - 1 do
 			surface.SetDrawColor( HSVToColor( i * mult % 360, 1, 1 ) )
@@ -93,7 +92,6 @@ local function DrawRainbowRect( mult, vertical, x, y, w, h )
 			surface.DrawRect( i, y, 1, h )
 		end
 	end
-	
 end
 
 --[[---------------------------------------------------------
