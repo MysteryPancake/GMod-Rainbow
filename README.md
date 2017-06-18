@@ -1,7 +1,7 @@
 # Garry's Mod Rainbow Functions
 These are a bunch of functions I've made to assist people with drawing rainbow stuff in [Garry's Mod](http://www.garrysmod.com/). Most of them involve the [surface library](https://wiki.garrysmod.com/page/Category:surface), and cause a lot of lag.
 
-Have fun!
+Use them for whatever you want, and have fun!
 
 ![Rainbow image](http://i.imgur.com/9i6GApi.png)
 
