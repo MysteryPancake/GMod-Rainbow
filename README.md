@@ -5,18 +5,18 @@ Use them for whatever you want, and have fun!
 
 ![Rainbow image](http://i.imgur.com/9i6GApi.png)
 
-# What the functions look like
-#### ConsolePrintRainbow
+## What the functions look like
+### ConsolePrintRainbow
 ![ConsolePrintRainbow image](http://i.imgur.com/8V8hSRG.png)
-#### ChatPrintRainbow
+### ChatPrintRainbow
 ![ChatPrintRainbow image](http://i.imgur.com/QyUu0Hl.png)
-#### DrawRainbowText
+### DrawRainbowText
 ![DrawRainbowText image](http://i.imgur.com/fcVnwnh.png)
-#### DrawRainbowRectOutline
+### DrawRainbowRectOutline
 ![DrawRainbowRectOutline image](http://i.imgur.com/wdpXkNw.png)
-#### DrawRainbowRect
+### DrawRainbowRect
 ![DrawRainbowRect image](http://i.imgur.com/UrNhdOR.png)
 
-The rectangle on the left has vertical set as true, and the one on the right has it set to false.
-#### DrawRainbowRect2
+The rectangle on the left has vertical set to true, and the one on the right as false.
+### DrawRainbowRect2
 ![DrawRainbowRect2 image](http://i.imgur.com/J8JbKGL.png)
