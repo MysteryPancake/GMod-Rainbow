@@ -17,6 +17,6 @@ Use them for whatever you want, and have fun!
 ### DrawRainbowRect
 ![DrawRainbowRect image](http://i.imgur.com/UrNhdOR.png)
 
-The rectangle on the left has vertical set to true, and the one on the right as false.
+The rectangle on the left has vertical set to true, and the right one to false.
 ### DrawRainbowRect2
 ![DrawRainbowRect2 image](http://i.imgur.com/J8JbKGL.png)
