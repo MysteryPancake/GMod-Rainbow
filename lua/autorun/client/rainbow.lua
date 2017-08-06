@@ -1,57 +1,52 @@
 --[[---------------------------------------------------------
-    ConsolePrintRainbow( number multiplier, string text )
+    ConsolePrintRainbow( number multiplier, string str )
     Prints rainbow text in the console.
 -----------------------------------------------------------]]
-local function ConsolePrintRainbow( multiplier, text )
+local function ConsolePrintRainbow( multiplier, str )
 	
-	local tab = {}
+	local text = {}
 	
-	for i = 1, #text do
-		local col = HSVToColor( i * multiplier % 360, 1, 1 )
-		table.insert( tab, col )
-		local letter = string.sub( text, i, i )
-		table.insert( tab, letter )
+	for i = 1, #str do
+		table.insert( tab, HSVToColor( i * multiplier % 360, 1, 1 ) )
+		table.insert( tab, string.sub( str, i, i ) )
 	end
 	
-	table.insert( tab, "\n" )
-	MsgC( unpack( tab ) )
+	table.insert( text, "\n" )
+	
+	MsgC( unpack( text ) )
 	
 end
 
 --[[---------------------------------------------------------
-    ChatPrintRainbow( number multiplier, string text )
+    ChatPrintRainbow( number multiplier, string str )
     Prints rainbow text in the chat.
 -----------------------------------------------------------]]
-local function ChatPrintRainbow( multiplier, text )
+local function ChatPrintRainbow( multiplier, str )
 	
-	local tab = {}
+	local text = {}
 	
-	for i = 1, #text do
-		local col = HSVToColor( i * multiplier % 360, 1, 1 )
-		table.insert( tab, col )
-		local letter = string.sub( text, i, i )
-		table.insert( tab, letter )
+	for i = 1, #str do
+		table.insert( text, HSVToColor( i * multiplier % 360, 1, 1 ) )
+		table.insert( text, string.sub( str, i, i ) )
 	end
 
-	chat.AddText( unpack( tab ) )
+	chat.AddText( unpack( text ) )
 	
 end
 
 --[[---------------------------------------------------------
-    DrawRainbowText( number multiplier, string text, string font, number x, number y )
+    DrawRainbowText( number multiplier, string str, string font, number x, number y )
     Draws rainbow text.
 -----------------------------------------------------------]]
-local function DrawRainbowText( multiplier, text, font, x, y )
+local function DrawRainbowText( multiplier, str, font, x, y )
 	
 	surface.SetFont( font )
 	
 	for i = 1, #text do
-		local col = HSVToColor( i * multiplier % 360, 1, 1 )
-		surface.SetTextColor( col )
-		local w, h = surface.GetTextSize( string.sub( text, 1, i - 1 ) )
+		surface.SetTextColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+		local w, h = surface.GetTextSize( string.sub( str, 1, i - 1 ) )
 		surface.SetTextPos( x + w, y )
-		local letter = string.sub( text, i, i )
-		surface.DrawText( letter )
+		surface.DrawText( string.sub( str, i, i ) )
 	end
 	
 end
