@@ -7,8 +7,8 @@ local function ConsolePrintRainbow( multiplier, str )
 	local text = {}
 	
 	for i = 1, #str do
-		table.insert( tab, HSVToColor( i * multiplier % 360, 1, 1 ) )
-		table.insert( tab, string.sub( str, i, i ) )
+		table.insert( text, HSVToColor( i * multiplier % 360, 1, 1 ) )
+		table.insert( text, string.sub( str, i, i ) )
 	end
 	
 	table.insert( text, "\n" )
