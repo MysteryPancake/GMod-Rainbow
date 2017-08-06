@@ -42,7 +42,7 @@ local function DrawRainbowText( multiplier, str, font, x, y )
 	
 	surface.SetFont( font )
 	
-	for i = 1, #text do
+	for i = 1, #str do
 		surface.SetTextColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
 		local w, h = surface.GetTextSize( string.sub( str, 1, i - 1 ) )
 		surface.SetTextPos( x + w, y )
