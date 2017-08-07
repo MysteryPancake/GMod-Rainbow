@@ -96,7 +96,7 @@ end
 local function DrawRainbowRect2( x, y, w, h )
 	for i = x, x + w - 1 do
 		for j = y, y + h - 1 do
-			surface.SetDrawColor( i / w * 255, j / h * 255, 255 - ( i / w * 255 ), 255 )
+			surface.SetDrawColor( ( i - x ) / w * 255, ( j - y ) / h * 255, 255 - ( ( i - x ) / w * 255 ), 255 )
 			surface.DrawRect( i, j, 1, 1 )
 		end
 	end
