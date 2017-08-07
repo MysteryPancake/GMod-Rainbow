@@ -1,5 +1,5 @@
 # Garry's Mod Rainbow Functions
-These are a bunch of functions I've made to assist people with drawing rainbow stuff in [Garry's Mod](http://www.garrysmod.com/). Most of them involve the [surface library](https://wiki.garrysmod.com/page/Category:surface), and cause a lot of lag.
+These functions let you draw rainbows, and cause a lot of lag. If you don't want lag, then use [DrawTexturedRect](https://wiki.garrysmod.com/page/surface/DrawTexturedRect).
 
 Use them for whatever you want, and have fun!
 
@@ -17,6 +17,6 @@ Use them for whatever you want, and have fun!
 ### DrawRainbowRect
 ![DrawRainbowRect image](http://i.imgur.com/UrNhdOR.png)
 
-The rectangle on the left has vertical set to true, and the right one to false.
+The rectangle on the left has `vertical` set to `true`, and the one on the right to `false`.
 ### DrawRainbowRect2
 ![DrawRainbowRect2 image](http://i.imgur.com/J8JbKGL.png)
