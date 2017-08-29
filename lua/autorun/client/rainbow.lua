@@ -56,7 +56,9 @@ end
     Draws a rainbow rectangle.
 -----------------------------------------------------------]]
 local function DrawRainbowRect( multiplier, vertical, x, y, w, h )
+	
 	if vertical then
+		
 		for i = y, y + h - 1 do
 			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
 			surface.DrawRect( x, i, w, 1 )
@@ -66,7 +68,9 @@ local function DrawRainbowRect( multiplier, vertical, x, y, w, h )
 			surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
 			surface.DrawRect( i, y, 1, h )
 		end
+		
 	end
+	
 end
 
 --[[---------------------------------------------------------
