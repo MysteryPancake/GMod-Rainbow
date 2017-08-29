@@ -1,19 +1,17 @@
 --[[---------------------------------------------------------
-    ConsolePrintRainbow( number multiplier, string str )
-    Prints rainbow text in the console.
+    DrawRainbowText( number multiplier, string str, string font, number x, number y )
+    Draws rainbow text.
 -----------------------------------------------------------]]
-local function ConsolePrintRainbow( multiplier, str )
+local function DrawRainbowText( multiplier, str, font, x, y )
 	
-	local text = {}
+	surface.SetFont( font )
 	
 	for i = 1, #str do
-		table.insert( text, HSVToColor( i * multiplier % 360, 1, 1 ) )
-		table.insert( text, string.sub( str, i, i ) )
+		surface.SetTextColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+		local w, _ = surface.GetTextSize( string.sub( str, 1, i - 1 ) )
+		surface.SetTextPos( x + w, y )
+		surface.DrawText( string.sub( str, i, i ) )
 	end
-	
-	table.insert( text, "\n" )
-	
-	MsgC( unpack( text ) )
 	
 end
 
@@ -35,39 +33,21 @@ local function ChatPrintRainbow( multiplier, str )
 end
 
 --[[---------------------------------------------------------
-    DrawRainbowText( number multiplier, string str, string font, number x, number y )
-    Draws rainbow text.
+    ConsolePrintRainbow( number multiplier, string str )
+    Prints rainbow text in the console.
 -----------------------------------------------------------]]
-local function DrawRainbowText( multiplier, str, font, x, y )
+local function ConsolePrintRainbow( multiplier, str )
 	
-	surface.SetFont( font )
+	local text = {}
 	
 	for i = 1, #str do
-		surface.SetTextColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
-		local w, h = surface.GetTextSize( string.sub( str, 1, i - 1 ) )
-		surface.SetTextPos( x + w, y )
-		surface.DrawText( string.sub( str, i, i ) )
+		table.insert( text, HSVToColor( i * multiplier % 360, 1, 1 ) )
+		table.insert( text, string.sub( str, i, i ) )
 	end
 	
-end
-
---[[---------------------------------------------------------
-    DrawRainbowRectOutline( number multiplier, number x, number y, number width, number height )
-    Draws a rainbow outline of a rectangle.
------------------------------------------------------------]]
-local function DrawRainbowRectOutline( multiplier, x, y, w, h )
+	table.insert( text, "\n" )
 	
-	for i = x, x + w - 1 do
-		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
-		surface.DrawLine( i, y, i + 1, y )
-		surface.DrawLine( i, y + h - 1, i + 1, y + h )
-	end
-	
-	for i = y, y + h - 1 do
-		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
-		surface.DrawLine( x, i, x, i + 1 )
-		surface.DrawLine( x + w - 1, i, x + w, i + 1 )
-	end
+	MsgC( unpack( text ) )
 	
 end
 
@@ -100,4 +80,24 @@ local function DrawRainbowRect2( x, y, w, h )
 			surface.DrawRect( i, j, 1, 1 )
 		end
 	end
+end
+
+--[[---------------------------------------------------------
+    DrawRainbowRectOutline( number multiplier, number x, number y, number width, number height )
+    Draws a rainbow outline of a rectangle.
+-----------------------------------------------------------]]
+local function DrawRainbowRectOutline( multiplier, x, y, w, h )
+	
+	for i = x, x + w - 1 do
+		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+		surface.DrawLine( i, y, i + 1, y )
+		surface.DrawLine( i, y + h - 1, i + 1, y + h )
+	end
+	
+	for i = y, y + h - 1 do
+		surface.SetDrawColor( HSVToColor( i * multiplier % 360, 1, 1 ) )
+		surface.DrawLine( x, i, x, i + 1 )
+		surface.DrawLine( x + w - 1, i, x + w, i + 1 )
+	end
+	
 end
