@@ -1,6 +1,5 @@
 # Garry's Mod Rainbow Functions
-These functions let you draw rainbows using the [surface library](https://wiki.garrysmod.com/page/Category:surface), and cause a lot of lag.
-If you don't want lag, then [DrawTexturedRect](https://wiki.garrysmod.com/page/surface/DrawTexturedRect) is faster.
+These functions let you draw rainbows, and cause a lot of lag. If you don't want lag, then [DrawTexturedRect](https://wiki.garrysmod.com/page/surface/DrawTexturedRect) is faster.
 
 Use them for whatever you want, and have fun!
 
